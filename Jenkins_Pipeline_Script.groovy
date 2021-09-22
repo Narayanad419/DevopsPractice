@@ -1,4 +1,5 @@
 currentBuild.displayName="Pipeline2-#"+BUILD_NUMBER
+
 pipeline {
     agent {label 'Slave'}
     environment {PATH = "/opt/maven/bin:$PATH"}
