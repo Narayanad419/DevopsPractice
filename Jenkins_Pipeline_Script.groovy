@@ -33,7 +33,7 @@ pipeline {
                         ],
                         credentialsId: 'Narayana-cred', 
                         groupId: 'com.efsavage', 
-                        nexusUrl: '15.207.79.185:8080', 
+                        nexusUrl: '15.207.79.185:8081', 
                         nexusVersion: 'nexus3', 
                         protocol: 'http', 
                         repository: 'LearnDevops', 
