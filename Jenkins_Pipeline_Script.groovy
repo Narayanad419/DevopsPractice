@@ -28,7 +28,7 @@ pipeline {
                     [
                         artifactId: 'jetty-maven-plugin',
                         classifier: '', 
-                        file: '/home/ec2-user/workspace/Pipeline3/target/hello-world-war-2.0.4',
+                        file: '/home/ec2-user/workspace/Pipeline3/target/hello-world-war-2.0.5
                         type: 'war']
                         ],
                         credentialsId: 'Narayana-cred', 
@@ -37,7 +37,7 @@ pipeline {
                         nexusVersion: 'nexus3', 
                         protocol: 'http', 
                         repository: 'LearnDevops', 
-                        version: '2.0.4'
+                        version: '2.0.5'
               }
         }            
         stage('deploy'){
