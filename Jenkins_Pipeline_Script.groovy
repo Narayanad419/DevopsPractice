@@ -24,6 +24,24 @@ pipeline {
         }
         stage('deploy'){
             steps {
+                nexusArtifactUploader artifacts: [
+                    [
+                        artifactId: 'jetty-maven-plugin',
+                        classifier: '', 
+                        file: '/target/',
+                        type: 'war']
+                        ],
+                        credentialsId: 'Narayana-cred', 
+                        groupId: 'com.efsavage', 
+                        nexusUrl: '15.207.79.185:8080', 
+                        nexusVersion: 'nexus3', 
+                        protocol: 'http', 
+                        repository: 'LearnDevops', 
+                        version: '2.0.4'
+              }
+        }            
+        stage('deploy'){
+            steps {
                 deploy adapters: [tomcat8(credentialsId: 'Narayana-tomcat cred', path: '',
                 url: 'http://3.109.219.27:8080/')], contextPath: 'hello', war: '**/*.war'
             }
