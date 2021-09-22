@@ -34,7 +34,7 @@ pipeline {
         stage('deploy'){
             steps {
                 deploy adapters: [tomcat8(credentialsId: 'Narayana-tomcat', path: '', 
-                url: 'http://3.109.219.27:8080/')], contextPath: 'hello', war: 'war'
+                url: 'http://3.109.219.27:8080/')], contextPath: 'hello', war: '**/target/*.war'
             }
         }
     }
