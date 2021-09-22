@@ -28,7 +28,7 @@ pipeline {
                     [
                         artifactId: 'jetty-maven-plugin',
                         classifier: '', 
-                        file: '/home/ec2-user/workspace/Pipeline3/target/hello-world-war-2.0.4
+                        file: '/home/ec2-user/workspace/Pipeline3/target/hello-world-war-2.0.4'
                         type: 'war']
                         ],
                         credentialsId: 'Narayana-cred', 
