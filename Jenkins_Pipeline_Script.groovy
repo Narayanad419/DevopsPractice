@@ -24,20 +24,11 @@ pipeline {
         }
         stage('Artifactory upload'){
             steps {
-                nexusArtifactUploader artifacts: [
-                    [
-                        artifactId: 'jetty-maven-plugin',
-                        classifier: '', 
-                        file: '/home/ec2-user/workspace/Pipeline3/target/hello-world-war-2.0.4'
-                        type: 'war']
-                        ],
-                        credentialsId: 'Narayana-cred', 
-                        groupId: 'com.efsavage', 
-                        nexusUrl: '15.207.79.185:8081', 
-                        nexusVersion: 'nexus3', 
-                        protocol: 'http', 
-                        repository: 'LearnDevops', 
-                        version: '2.0.4'
+                nexusArtifactUploader artifacts: [[artifactId: 'jetty-maven-plugin', classifier: '', 
+                    file: '/home/ec2-user/workspace/Pipeline3/target/hello-world-war-2.0.4', 
+                    type: 'war']], credentialsId: 'Narayana-cred', groupId: 'com.efsavage', 
+                    nexusUrl: 'http://15.207.79.185:8081/', nexusVersion: 'nexus3', 
+                    protocol: 'http', repository: 'LearnDevops', version: '2.0.4'
               }
         }            
         stage('deploy'){
