@@ -27,7 +27,7 @@ pipeline {
                 script{
                     def mavenPom = readMavenPom file: 'pom.xml'
                 nexusArtifactUploader artifacts: [[artifactId: 'jetty-maven-plugin', classifier: '', 
-                                                   file: "/home/ec2-user/workspace/Pipeline3/target/hello-world-${mavenPom.version}.war", 
+                                                   file: "/home/ec2-user/workspace/Pipeline3/target/hello-world-war-${mavenPom.version}.war", 
                     type: 'war']
                     ],
                     credentialsId: 'Narayana-cred', 
